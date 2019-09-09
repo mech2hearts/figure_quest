@@ -1,0 +1,27 @@
+{
+    "manifest_version": 2,
+    "name" : "Figure Quest",
+    "version" : "0.1",
+    "description": "Figure price comparison",
+    "icons":{
+        "128":"icon128.png",
+        "48":"icon48.png",
+        "16":"icon16.png"
+    },
+    "browser_action":{
+        "default_icon": "icon16.png",
+        "default_popup": "popup.html"
+    },
+    "content_scripts": [{
+        "matches": ["https://www.plazajapan.com/*"],
+        "js" : ["content.js"],
+        "run_at": "document_end"
+    }],
+    "background": {
+        "scripts" : ["background.js"]
+    },
+    "permissions":[
+        "http://localhost:5000/search",
+        "storage"
+    ]
+}
